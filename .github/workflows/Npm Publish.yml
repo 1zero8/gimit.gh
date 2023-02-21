@@ -1,0 +1,43 @@
+name: Npm Publish
+on:
+  schedule:
+    - cron: '0 */12 * * *'
+  workflow_dispatch:
+jobs:
+  npm-publish:
+    name: npm publish
+    strategy:
+      fail-fast: false
+      matrix:  
+        version: [10, 12, 14, 16, 18]
+        os: [ubuntu-latest, windows-latest]
+        include:
+          - package: './packages/gimit'
+          - package: './packages/git'
+    runs-on: ubuntu-latest
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+    if: github.repository_owner == 'discordjs'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install node.js v16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        uses: ./packages/actions/src/yarnCache
+
+      - name: Build dependencies
+        run: yarn build
+
+      - name: Publish package
+        run: |
+          yarn workspace ${{ matrix.package }} release --preid "dev.$(date +%s)-$(git rev-parse --short HEAD)"
+          yarn workspace ${{ matrix.package }} npm publish --tag dev || true
+        env:
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
