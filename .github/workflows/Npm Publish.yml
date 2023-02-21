@@ -10,12 +10,12 @@ jobs:
   npm-publish:
     name: npm publish
     strategy:
-      matrix:  
-        version: [10, 12, 14, 16, 18]
+      matrix:
         os: [ubuntu-latest, windows-latest]
         include:
           - package: './dist/packages/gimit'
-          - package: './dist/packages/git'
+          - package: './dist/packages/git'  
+        node: [14, 16, 18]
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -25,7 +25,7 @@ jobs:
       - name: Install node.js v16
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.version }}
+          node-version: ${{ matrix.node }}
 
       - name: Install dependencies
         run: npm install
