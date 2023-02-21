@@ -11,11 +11,11 @@ jobs:
     name: npm publish
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
         include:
           - package: './dist/packages/gimit'
           - package: './dist/packages/git'  
-        node: [14, 16, 18]
+        node: [16]
 
     runs-on: ${{ matrix.os }}
     steps:
