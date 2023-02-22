@@ -40,6 +40,6 @@ jobs:
         #run: cp -r packages/${{ matrix.package }}/.npmignore build/packages/${{ matrix.package }}/.npmignore 
       
       - name: Publish Package
-        run: npm publish ./build/packages/${{ matrix.package }}
+        run: npm publish ../../build/packages/${{ matrix.package }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
