@@ -12,5 +12,5 @@ Please note we have a code of conduct, follow it in all your interactions with t
 
 ## Making minor changes
 ```
-@gimit.gh are not the best coder, so there are sure some problematic coding decision, every slightest of changes will helps a lot. I'm always happy to receive Pull requests to improve things.
+@dkmca-gh are not the best coder, so there are sure some problematic coding decision, every slightest of changes will helps a lot. I'm always happy to receive Pull requests to improve things.
 ```
