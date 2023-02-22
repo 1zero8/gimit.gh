@@ -1,0 +1,7 @@
+/.git
+node_modules
+.env
+package-lock.json
+packages/**/node_modules
+packages/**/.env
+packages/**/package-lock.json
