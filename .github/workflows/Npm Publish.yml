@@ -41,6 +41,14 @@ jobs:
           echo ".env" >> build/packages/${{ matrix.package }}/.npmignore
           echo "__test__" >> build/packages/${{ matrix.package }}/.npmignore
           echo "package-lock.json" >> build/packages/${{ matrix.package }}/.npmignore
+          # excluding ts files
+          echo "*.ts" >> build/packages/${{ matrix.package }}/.npmignore
+          echo "src/*.ts" >> build/packages/${{ matrix.package }}/.npmignore
+          echo "src/**/*.ts" >> build/packages/${{ matrix.package }}/.npmignore
+          # !excluding typings files
+          echo "!*.d.ts" >> build/packages/${{ matrix.package }}/.npmignore
+          echo "!src/*.d.ts" >> build/packages/${{ matrix.package }}/.npmignore
+          echo "!src/**/*.d.ts" >> build/packages/${{ matrix.package }}/.npmignore
 
         #run: cp -r packages/${{ matrix.package }}/.npmignore build/packages/${{ matrix.package }}/.npmignore 
       
