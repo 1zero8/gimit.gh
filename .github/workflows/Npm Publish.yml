@@ -31,6 +31,12 @@ jobs:
 
       - name: Build dependencies
         run: npm run build
+
+      - name: Setting up readme
+        run: cp -r packages/${{ matrix.package }}/README.md build/packages/${{ matrix.package }}/README.md
+
+      - name: Setting up .npmignore
+        run: cp -r packages/${{ matrix.package }}/.npmignore build/packages/${{ matrix.package }}/.npmignore 
       
       - name: Publish Package
         run: npm publish ${{ matrix.package }}
