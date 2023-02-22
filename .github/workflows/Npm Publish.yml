@@ -35,23 +35,7 @@ jobs:
       - name: Build dependencies
         run: npm run build
 
-      - name: Setting up readme
-        run: cp -r packages/${{ matrix.package }}/README.md build/packages/${{ matrix.package }}/README.md
-
-      - name: Setting up .npmignore
-        run: |
-          echo "node_modules" >> build/packages/${{ matrix.package }}/.npmignore
-          echo ".env" >> build/packages/${{ matrix.package }}/.npmignore
-          echo "__test__" >> build/packages/${{ matrix.package }}/.npmignore
-          echo "package-lock.json" >> build/packages/${{ matrix.package }}/.npmignore
-          # excluding ts files
-          echo "*.ts" >> build/packages/${{ matrix.package }}/.npmignore
-          echo "src/*.ts" >> build/packages/${{ matrix.package }}/.npmignore
-          echo "src/**/*.ts" >> build/packages/${{ matrix.package }}/.npmignore
-          # !excluding typings files
-          echo "!*.d.ts" >> build/packages/${{ matrix.package }}/.npmignore
-          echo "!src/*.d.ts" >> build/packages/${{ matrix.package }}/.npmignore
-          echo "!src/**/*.d.ts" >> build/packages/${{ matrix.package }}/.npmignore
+     
 
         #run: cp -r packages/${{ matrix.package }}/.npmignore build/packages/${{ matrix.package }}/.npmignore 
       
