@@ -13,7 +13,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         include:
-          - package: 'gimit' 
+          - package: 'gimit.gh' 
         node: [16]
 
     runs-on: ${{ matrix.os }}
