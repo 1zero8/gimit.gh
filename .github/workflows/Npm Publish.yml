@@ -27,7 +27,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Back to home directory
-        uses: cd ../..
+        run: cd ../..
 
       - name: Install dependencies
         run: npm install --save-dev
