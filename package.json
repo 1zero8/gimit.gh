@@ -7,6 +7,17 @@
 		"lint:fix": "npx eslint . --fix",
 		"changelog": "npx changelog"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dkmca-gh/gimit.gh.git"
+	},
+	"bugs": {
+		"url": "https://github.com/dkmca-gh/gimit.gh/issues"
+	},
+	"contributors": [
+		"Durgesh Kumar Sharma <dkmca.gh@gmail.com>"
+	],
+	"homepage": "https://gimit.vercel.app",
 	"author": "Durgesh Kumar Sharma",
 	"license": "ISC",
 	"devDependencies": {
@@ -21,5 +32,16 @@
 		"typedoc-plugin-rename-defaults": "^0.6.4",
 		"typedoc-theme-hierarchy": "^3.0.0",
 		"typescript": "^4.6.3"
-	}
+	},
+	"engines": {
+		"node": ">=16.9.0"
+	},
+	"keywords": [
+	    "database",
+	    "gimit.gh"
+	],
+	"workspaces": [
+		"apps/*",
+		"packages/*"
+	]
 }
