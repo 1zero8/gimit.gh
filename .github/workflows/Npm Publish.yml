@@ -15,6 +15,7 @@ jobs:
         include:
           - package: './build/packages/gimit' 
         node: [16]
+        npmignore: [node_modules, .env]
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -36,7 +37,8 @@ jobs:
         run: cp -r packages/${{ matrix.package }}/README.md build/packages/${{ matrix.package }}/README.md
 
       - name: Setting up .npmignore
-        run: cp -r packages/${{ matrix.package }}/.npmignore build/packages/${{ matrix.package }}/.npmignore 
+        run: echo "${{ matrix.npmignore }}" >> build/packages/${{ matrix.package }}/.npmignore
+        #run: cp -r packages/${{ matrix.package }}/.npmignore build/packages/${{ matrix.package }}/.npmignore 
       
       - name: Publish Package
         run: npm publish ${{ matrix.package }}
