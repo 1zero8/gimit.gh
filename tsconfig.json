@@ -1,0 +1,35 @@
+{
+	"compilerOptions": {
+		"baseUrl": "./packages",
+		"outDir": "./build/packages",
+		"target": "esnext",
+		"allowJs": true,
+		"moduleResolution": "node",
+		"module": "commonjs",
+		"resolveJsonModule": true,
+		"pretty": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"paths": {},
+		"typeRoots": [
+			"packages/**/node_modules/@types/**/*.ts",
+			"packages/**/node_modules/@types/**/*.\.[^d]\.ts",
+			"packages/**/src/*.ts",
+			"packages/**/src/**/*.ts",
+			"packages/**/*.ts"
+		],
+		"inlineSourceMap": true,
+		"strict": true,
+		"declaration": true,
+		"strictBindCallApply": true,
+		"strictPropertyInitialization": false
+	},
+	"include": [
+		"packages/**/*",
+		"packages/**/*.json"
+	],
+	"exclude": [
+		"packages/**/node_modules",
+		"packages/**/__test__/*.ts"
+	],
+}
