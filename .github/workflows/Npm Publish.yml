@@ -13,7 +13,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         include:
-          - package: './build/packages/gimit' 
+          - package: 'gimit' 
         node: [16]
 
     runs-on: ${{ matrix.os }}
@@ -56,6 +56,6 @@ jobs:
         #run: cp -r packages/${{ matrix.package }}/.npmignore build/packages/${{ matrix.package }}/.npmignore 
       
       - name: Publish Package
-        run: npm publish ${{ matrix.package }}
+        run: npm publish ./build/packages/${{ matrix.package }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
