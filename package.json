@@ -1,0 +1,25 @@
+{
+	"name": "gimit.gh",
+	"version": "0.0.0",
+	"scripts": {
+		"build": "rm -rf build && npx tsc",
+		"lint": "npx eslint . --ext .ts",
+		"lint:fix": "npx eslint . --fix",
+		"changelog": "npx changelog"
+	},
+	"author": "Durgesh Kumar Sharma",
+	"license": "ISC",
+	"devDependencies": {
+		"@types/node": "^17.0.45",
+		"@typescript-eslint/eslint-plugin": "^5.18.0",
+		"@typescript-eslint/parser": "^5.18.0",
+		"changelog": "^1.4.2",
+		"eslint": "^7.32.0",
+		"npx": "^10.2.2",
+		"ts-node": "^10.7.0",
+		"typedoc": "^0.23.10",
+		"typedoc-plugin-rename-defaults": "^0.6.4",
+		"typedoc-theme-hierarchy": "^3.0.0",
+		"typescript": "^4.6.3"
+	}
+}
