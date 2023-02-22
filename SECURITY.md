@@ -1,4 +1,4 @@
-# Gimit.gh Security
+# Security
 
 ## Reporting vulnerabilities
 ```
